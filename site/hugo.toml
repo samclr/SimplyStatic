@@ -1,0 +1,4 @@
+baseURL = 'https://SinlessPotato.github.io/'
+languageCode = 'en-us'
+title = 'SimplyStatic'
+theme = "PaperMod"

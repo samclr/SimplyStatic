@@ -1,0 +1,4 @@
+[submodule "site/public"]
+	path = site/public
+	url = https://github.com/SinlessPotato/SinlessPotato.github.io.git
+	branch = main
