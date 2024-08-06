@@ -13,4 +13,4 @@ position = Vector2(0, 1)
 polygon = PackedVector2Array(-1, -2, 1, -2, 1, 0, -1, 0)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(17, -7)
+position = Vector2(32, 25)
