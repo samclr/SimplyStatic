@@ -5,6 +5,7 @@ extends Node2D
 #_draw has different coordinate system because it is based off node2d so base everything off the orgin.
 
 const grid_seperation = 20.5 # make in multiples of 5 and ending in .5
+@export var grid_hover_tolerance = 5 # amount of tolerance you want around each cordinate intersection for clicking
 ########################################################################
 const mouse_pixel = grid_seperation*2
 var viewport_width
@@ -54,10 +55,56 @@ func _draw():
 func _input(event):
 	
 	if event is InputEventMouseButton:
-		event.position.x
+		var x = event.position.x 
+		var y = event.position.y
 		print("Mouse Click/Unclick at: ", event.position)
-		print(viewport_height/2)
-	elif event is InputEventMouseMotion:
+		
+		#FOR QUAD 1 & 4
+		var i = viewport_width/2 
+		while i <= viewport_width: #from orgin to right side of page
+			####################################################################################
+			if abs(x - i) <= grid_hover_tolerance: #checks if x position is within 5 pixels of a verical line
+				print('by a vertical line')
+				i = viewport_height/2 #from orgin to bottom of screen
+				while i <= viewport_width:
+					if abs(y - i) <= grid_hover_tolerance: #checks if y position is within 5 pixels of a horizontal line
+						print('by a horizontal line')
+						break
+					i += mouse_pixel
+					############################################################################
+				i = viewport_height/2 #from orgin to top of screen
+				while i >= 0:
+					if abs(y - i) <= grid_hover_tolerance: #checks if y position is within 5 pixels of a horizontal line
+						print('by a horizontal line')
+						break
+					i -= mouse_pixel
+				break
+			i += mouse_pixel
+			
+		#FOR QUAD 2 & 3
+		i = viewport_width/2 
+		while i >= 0: #from orgin to left side of page
+			####################################################################################
+			if abs(x - i) <= grid_hover_tolerance: #checks if x position is within 5 pixels of a verical line
+				print('by a vertical line')
+				i = viewport_height/2 #from orgin to bottom of screen
+				while i <= viewport_width:
+					if abs(y - i) <= grid_hover_tolerance: #checks if y position is within 5 pixels of a horizontal line
+						print('by a horizontal line')
+						break
+					i += mouse_pixel
+					############################################################################
+				i = viewport_height/2 #from orgin to top of screen
+				while i >= 0:
+					if abs(y - i) <= grid_hover_tolerance: #checks if y position is within 5 pixels of a horizontal line
+						print('by a horizontal line')
+						break
+					i -= mouse_pixel
+				break
+			i -= mouse_pixel
+	
+	elif event == InputEventMouseMotion: #CHANGE == to is for it to be active
+		
 		var x = event.position.x 
 		var y = event.position.y
 		if x == viewport_width/2 and y == viewport_height/2 :
