@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1srbyct77rqm"]
+
+[ext_resource type="Script" path="res://DrawingGrid.gd" id="1_tqs63"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tqs63")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(-1, -2, 1, -2, 1, 0, -1, 0)
