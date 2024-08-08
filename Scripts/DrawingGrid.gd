@@ -133,15 +133,14 @@ func _input(event):
 			queue_redraw()
 			
 func convert_points():
-	var result: Array = []
+	var shape_points : Array = []
 	for key in points_uncorrected.keys():
 		var point = points_uncorrected[key]
 		# Ensure that the point is a list or array with exactly 2 elements
 		if point.size() == 2:
-			result.append(Vector2(point[0], point[1]))
-			print("Added point: ", Vector2(point[0], point[1]))
+			shape_points.append(Vector2(point[0], point[1]))
 	if polygon_node:
 		# Update the polygon with the points from the list
-		polygon_node.polygon = result
+		polygon_node.polygon = shape_points
 
 
