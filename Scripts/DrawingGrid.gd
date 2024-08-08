@@ -13,6 +13,7 @@ var viewport_height
 var drawing_counter = 1
 var point_counter = 1
 var points_uncorrected = {}
+@onready var polygon_node = $Shape
 
 
 func _ready():
@@ -28,6 +29,8 @@ func _process(_delta):
 func _draw():
 	print('drawing: ', drawing_counter)
 	drawing_counter += 1
+	
+	convert_points()
 	
 	var viewport_size = get_window().get_size()
 	viewport_width = viewport_size.x
@@ -128,4 +131,17 @@ func _input(event):
 							break
 					i -= mouse_pixel
 			queue_redraw()
+			
+func convert_points():
+	var result: Array = []
+	for key in points_uncorrected.keys():
+		var point = points_uncorrected[key]
+		# Ensure that the point is a list or array with exactly 2 elements
+		if point.size() == 2:
+			result.append(Vector2(point[0], point[1]))
+			print("Added point: ", Vector2(point[0], point[1]))
+	if polygon_node:
+		# Update the polygon with the points from the list
+		polygon_node.polygon = result
+
 

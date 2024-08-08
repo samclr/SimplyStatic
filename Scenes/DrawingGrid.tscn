@@ -8,9 +8,11 @@ script = ExtResource("1_iocsf")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="orgin" type="Polygon2D" parent="."]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(-1, -2, 1, -2, 1, 0, -1, 0)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(17, -7)
+
+[node name="Shape" type="Polygon2D" parent="."]
