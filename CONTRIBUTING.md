@@ -8,7 +8,7 @@ We welcome contributions of all kinds, code improvements, bug fixes, documentati
 
 If you find a bug or have a suggestion, please check the existing issues before creating a new one. To report a bug or request a feature:
 
-1. **Search for Existing Issues**: Check the [issues](https://github.com/yourusername/SimplyStatic/issues) to see if your issue or suggestion has already been reported.
+1. **Search for Existing Issues**: Check the [issues](https://github.com/samclr/SimplyStatic/issues) to see if your issue or suggestion has already been reported.
 2. **Open a New Issue**: If it hasn’t been reported yet, click on “New issue” and provide a clear and detailed description of the problem or suggestion. Include as much information as possible to help us understand and address the issue.
 
 ### Submitting Code
@@ -32,10 +32,6 @@ We welcome code contributions and improvements. To contribute code:
     git push origin feature/my-new-feature
     ```
 7. **Create a Pull Request**: Go to the original repository and click on “Pull requests.” Click “New pull request” and select your branch. Provide a clear description of the changes you’ve made and submit the pull request.
-
-### Code of Conduct
-
-Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming and respectful environment for everyone involved.
 
 ## Guidelines
 
