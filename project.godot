@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="SimplyStatic"
-run/main_scene="res://DrawingGrid.tscn"
+run/main_scene="res://Scenes/DrawingGrid.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+Global="*res://Scripts/global.gd"
 
 [input]
 
