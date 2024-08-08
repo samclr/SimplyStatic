@@ -142,5 +142,4 @@ func convert_points():
 	if polygon_node:
 		# Update the polygon with the points from the list
 		polygon_node.polygon = shape_points
-
-
+		

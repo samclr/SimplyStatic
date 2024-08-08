@@ -23,11 +23,13 @@ position = Vector2(17, -7)
 
 [node name="Shape" type="Polygon2D" parent="."]
 
-[node name="CheckButton" type="CheckButton" parent="."]
-offset_left = -285.0
-offset_top = -157.0
-offset_right = -106.0
-offset_bottom = -126.0
-text = "X-Axis as Ground"
+[node name="ToggleFloor" type="CheckButton" parent="."]
+offset_left = -272.0
+offset_top = -144.0
+offset_right = -228.0
+offset_bottom = -120.0
+text = "Toggle X-Axis as Floor"
+alignment = 2
 
-[connection signal="pressed" from="CheckButton" to="Floor" method="_on_check_button_pressed"]
+[connection signal="toggled" from="ToggleFloor" to="." method="_on_toggle_floor_toggled_again"]
+[connection signal="toggled" from="ToggleFloor" to="Floor" method="_on_toggle_floor_toggled"]
